@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>IRIS - {% block title %}Investigation{% endblock %} | CSIRT </title>
+	<title>XDRAIV - {% block title %}Investigation{% endblock %} | CSIRT </title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/static/assets/img/logo.ico" type="image/x-icon"/>
+	<link rel="icon" href="/static/assets/img/logo.ico" type="image/x-icon" />
 	{% if demo_domain %}
-		<script defer data-domain="{{demo_domain}}" src="https://analytics.dfir-iris.org/js/plausible.js"></script>
+	<script defer data-domain="{{demo_domain}}" src="https://analytics.dfir-iris.org/js/plausible.js"></script>
 	{% endif %}
 	<!-- Fonts and icons -->
 	<script src="/static/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			custom: {"families":["Lato:300,400,700,900", "Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-			urls: ['/static/assets/css/fonts.css']},
-			active: function() {
+			custom: {
+				"families": ["Lato:300,400,700,900", "Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['/static/assets/css/fonts.css']
+			},
+			active: function () {
 				sessionStorage.fonts = true;
 			}
 		});
@@ -28,12 +31,13 @@
 	<link rel="stylesheet" href="/static/assets/css/suggestags.css">
 
 
-    <!-- Specific CSS goes HERE -->
-    {% block stylesheets %}{% endblock stylesheets %}
+	<!-- Specific CSS goes HERE -->
+	{% block stylesheets %}{% endblock stylesheets %}
 	{% if current_user.in_dark_mode %}
-		<link rel="stylesheet" href="/static/assets/css/dark-theme.css">
+	<link rel="stylesheet" href="/static/assets/css/dark-theme.css">
 	{% endif %}
 </head>
+
 <body>
 	<div class="wrapper {% block layout %}{% endblock layout %} {% include 'includes/sidebar_handler.html' %}">
 
@@ -46,7 +50,7 @@
 			<div class="content h-100 d-flex justify-content-center">
 
 				{% block content %}{% endblock content %}
-			
+
 			</div>
 
 			{% include 'includes/footer.html' %}
@@ -88,7 +92,7 @@
 
 	<script src="/static/assets/js/plugin/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/static/assets/js/plugin/ace/src-noconflict/ext-language_tools.js" type="text/javascript"
-    charset="utf-8"></script>
+		charset="utf-8"></script>
 
 	<!-- Iris Common -->
 	<script src="/static/assets/js/iris/common.js"></script>
@@ -102,7 +106,8 @@
 
 
 	<!-- Specific JS goes HERE -->
-    {% block javascripts %}{% endblock javascripts %}
-	
+	{% block javascripts %}{% endblock javascripts %}
+
 </body>
+
 </html>

@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>IRIS - {% block title %}Case{% endblock %} {% if session['current_case'].case_id %}| {{ session['current_case'].case_name }}  {% endif %} </title>
+	<title>XDRAIV - {% block title %}Case{% endblock %} {% if session['current_case'].case_id %}| {{
+		session['current_case'].case_name }} {% endif %} </title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="/static/assets/img/logo.ico" type="image/x-icon"/>
+	<link rel="icon" href="/static/assets/img/logo.ico" type="image/x-icon" />
 	{% if demo_domain %}
-		<script defer data-domain="{{demo_domain}}" src="https://analytics.dfir-iris.org/js/plausible.js"></script>
+	<script defer data-domain="{{demo_domain}}" src="https://analytics.dfir-iris.org/js/plausible.js"></script>
 	{% endif %}
 	<!-- Fonts and icons -->
 	<script src="/static/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
-			custom: {"families":["Lato:300,400,700,900", "Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
-			urls: ['/static/assets/css/fonts.css']},
-			active: function() {
+			custom: {
+				"families": ["Lato:300,400,700,900", "Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+				urls: ['/static/assets/css/fonts.css']
+			},
+			active: function () {
 				sessionStorage.fonts = true;
 			}
 		});
@@ -27,12 +31,13 @@
 	<link rel="stylesheet" href="/static/assets/css/suggestags.css">
 	<link rel="stylesheet" href="/static/assets/css/bootstrap-select.min.css">
 
-    <!-- Specific CSS goes HERE -->
-    {% block stylesheets %}{% endblock stylesheets %}
+	<!-- Specific CSS goes HERE -->
+	{% block stylesheets %}{% endblock stylesheets %}
 	{% if current_user.in_dark_mode %}
-		<link rel="stylesheet" href="/static/assets/css/dark-theme.css">
+	<link rel="stylesheet" href="/static/assets/css/dark-theme.css">
 	{% endif %}
 </head>
+
 <body>
 	<div class="wrapper {% block layout %}{% endblock layout %} {% include 'includes/sidebar_handler.html' %}">
 
@@ -41,7 +46,8 @@
 
 		{% include 'includes/quick-sidebar.html' %}
 		{% include 'includes/datastore-sidebar.html' %}
-		<div id="minimized_modal_box" class="col-10 col-xs-11 col-sm-4 minimized_modal shadow-lg" style="display:none;" title="Maximize modal" onclick="modal_maximize();">
+		<div id="minimized_modal_box" class="col-10 col-xs-11 col-sm-4 minimized_modal shadow-lg" style="display:none;"
+			title="Maximize modal" onclick="modal_maximize();">
 			<div class="row mt-3 mb-3">
 				<div class="col-10 d-flex">
 					<span data-notify="title" id="minimized_modal_title" class="align-self-center"></span>
@@ -84,7 +90,7 @@
 
 	<script src="/static/assets/js/plugin/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/static/assets/js/plugin/ace/src-noconflict/ext-language_tools.js" type="text/javascript"
-    charset="utf-8"></script>
+		charset="utf-8"></script>
 
 	<script src="/static/assets/js/iris/common.js"></script>
 	<script src="/static/assets/js/iris/datastore.js"></script>
@@ -97,7 +103,8 @@
 
 
 	<!-- Specific JS goes HERE -->
-    {% block javascripts %}{% endblock javascripts %}
-	
+	{% block javascripts %}{% endblock javascripts %}
+
 </body>
+
 </html>
